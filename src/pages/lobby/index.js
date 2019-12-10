@@ -1,9 +1,21 @@
 const template = document.createElement('template');
 template.innerHTML = `
   <style>
+    background-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: black;
+    }   
+    lobby-panel-item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
   </style>
-  <div>lobby</div>
-  <button onclick="location.pathname = '/game'">game</button>
+  <background-canvas></background-canvas>
+  <lobby-panel-item></lobby-panel-item>
 `;
 
 export default class Lobby extends HTMLElement {

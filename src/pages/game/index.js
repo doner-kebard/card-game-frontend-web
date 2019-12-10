@@ -2,7 +2,7 @@ const template = document.createElement('template');
 template.innerHTML = `
   <style>
   </style>
-  <div>game</div>
+  <div class="title">game</div>
   <button onclick="location.pathname = '/lobby'">go back</button>
 `;
 

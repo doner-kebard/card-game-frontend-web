@@ -1,11 +1,3 @@
-// import Board from './components/board';
-// import Card from './components/card';
-// import LobbyPanel from './components/lobbyPanel';
-// import Row from './components/row';
-// import Game from './pages/game';
-// import Lobby from './pages/lobby';
-// import ErrorPage from './pages/ErrorPage';
-
 const app = document.getElementById('App');
 
 const home = () => location.pathname = '/lobby';
@@ -13,6 +5,7 @@ const home = () => location.pathname = '/lobby';
 const lobby = async () => {
   await Promise.all([
     import('./components/lobbyPanel/index.js'),
+    import('./components/backgroundCanvas/index.js'),
     import('./pages/lobby/index.js'),
   ]);
   app.innerHTML = `<lobby-page></lobby-page>`;
