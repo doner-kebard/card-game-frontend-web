@@ -39,18 +39,18 @@ export default class BackgroundCanvas extends HTMLElement {
     this.init();
     this.anim();
 
-    window.addEventListener('resize', this.resizeHandler);
+    window.addEventListener('resize', this.resizeHandler.bind(this));
   }
 
   disconnectedCallback() {
-    window.removeEventListener('resize', this.resizeHandler);
+    window.removeEventListener('resize', this.resizeHandler.bind(this));
   }
 
   resizeHandler() {
     this.w = this.c.width = window.innerWidth;
     this.h = this.c.height = window.innerHeight;
-    this.starter.x = w / 2;
-    this.starter.y = h / 2;
+    this.starter.x = this.w / 2;
+    this.starter.y = this.h / 2;
 
     this.init();
   }
