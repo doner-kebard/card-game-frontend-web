@@ -39,21 +39,21 @@ export default class BackgroundCanvas extends HTMLElement {
     this.init();
     this.anim();
 
-    window.addEventListener('resize', this.resizeHandler.bind(this));
+    window.addEventListener('resize', this.resizeHandler);
   }
 
   disconnectedCallback() {
-    window.removeEventListener('resize', this.resizeHandler.bind(this));
+    window.removeEventListener('resize', this.resizeHandler);
   }
 
-  resizeHandler() {
+  resizeHandler = () => {
     this.w = this.c.width = window.innerWidth;
     this.h = this.c.height = window.innerHeight;
     this.starter.x = this.w / 2;
     this.starter.y = this.h / 2;
 
     this.init();
-  }
+  };
 
   init() {
     properties.lines.length = 0;
@@ -65,7 +65,7 @@ export default class BackgroundCanvas extends HTMLElement {
     this.ctx.fillRect(0, 0, this.w, this.h);
 
     // if you want a cookie ;)
-     this.ctx.lineCap = 'round';
+    this.ctx.lineCap = 'round';
   }
 
   anim() {

@@ -1,8 +1,11 @@
 const template = document.createElement('template');
 template.innerHTML = `
   <style>
+    .row {
+      border-style: solid;
+    }
   </style>
-  <div>row</div>
+  <div class="row">row</div>
 `;
 
 export default class Row extends HTMLElement {
@@ -17,4 +20,4 @@ export default class Row extends HTMLElement {
   }
 }
 
-window.customElements.define('row-item', Row);
+window.customElements.define('row-card', Row);

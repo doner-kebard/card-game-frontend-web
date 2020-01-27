@@ -2,8 +2,14 @@ const template = document.createElement('template');
 template.innerHTML = `
   <style>
   </style>
-  <div class="title">game</div>
-  <button onclick="location.pathname = '/lobby'">go back</button>
+  <div class="game">
+    <div class="score"></div>
+    <div class="boards">
+      <board-game></board-game>
+      <board-game></board-game>    
+    </div>
+    <row-card></row-card>
+  </div>
 `;
 
 export default class Game extends HTMLElement {

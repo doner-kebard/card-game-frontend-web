@@ -1,8 +1,17 @@
 const template = document.createElement('template');
 template.innerHTML = `
   <style>
+    .board {
+      border-style: solid;
+    }
   </style>
-  <div>board</div>
+  <div class="board">
+    <row-card></row-card>  
+    <row-card></row-card>  
+    <row-card></row-card>  
+    <row-card></row-card>  
+    <row-card></row-card>  
+  </div>
 `;
 
 export default class Board extends HTMLElement {
@@ -17,4 +26,4 @@ export default class Board extends HTMLElement {
   }
 }
 
-window.customElements.define('board-item', Board);
+window.customElements.define('board-game', Board);
